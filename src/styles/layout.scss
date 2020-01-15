@@ -1,0 +1,11 @@
+@import 'styles/mixins.scss';
+
+.container {
+    background-color: #ffffff;
+    margin: 0 auto;
+}
+
+.flex-row {
+    @include flex-row-center;
+    height: 100%;
+}

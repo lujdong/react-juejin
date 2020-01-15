@@ -1,0 +1,163 @@
+@import 'styles/variables.scss';
+@import 'styles/mixins.scss';
+
+.header-container {
+    position: relative;
+    width: $view-width;
+    height: $header-height;
+
+    .main-header {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        height: inherit;
+        border-bottom: 1px solid $light-color;
+
+        &-box {
+            width: $view-width;
+
+            .logo {
+                min-width: $logo-width;
+                margin-right: 2rem;
+            }
+
+            .nav {
+                height: $header-height;
+
+                &-list {
+                    height: $header-height;
+                    @include flex-row-center;
+
+                    &-item {
+                        height: inherit;
+                        padding: 0 $block-space;
+                        @include flex-row-center;
+                        color: $nav-color;
+                        font-size: 1.33rem;
+                        cursor: pointer;
+
+                        &:hover {
+                            color: $primary-color;
+                        }
+                    }
+                }
+            }
+
+            .user-container {
+                flex: 1;
+                @include flex-row-center;
+                height: $header-height;
+
+                .search-input {
+                    flex: 1;
+                    height: $header-height;
+                    @include flex-row-center;
+                    padding: 0 $block-space;
+
+                    &-item {
+                        @include flex-row-center;
+                        border: $card-border;
+                        border-radius: $card-radius-2px;
+                        background-color: $card-bg;
+
+                        .search-input_inner {
+                            width: 10rem;
+                            padding: .6rem 1rem;
+                            font-size: 1.1rem;
+                            color: #666;
+                            background-color: transparent;
+
+
+                        }
+
+                        .search-icon {
+                            padding: 0 .5rem;
+                            line-height: inherit;
+                        }
+                    }
+                }
+
+                .button-drop {
+                    height: 2.667rem;
+                    @include flex-row-center;
+                    cursor: pointer;
+                    position: relative;
+
+                    .add {
+                        padding: 0 .9rem;
+                        height: inherit;
+                        color: #fff;
+                        font-size: 1.167rem;
+                        background-color: $primary-color;
+                        border-radius: 3px;
+                        border-top-right-radius: 0;
+                        border-bottom-right-radius: 0;
+                        cursor: pointer;
+
+                        &:hover {
+                            background: #0876e4;
+                        }
+                    }
+
+                    .drop-allow {
+                        position: relative;
+                        width: 1.25em;
+                        flex: 1;
+                        height: inherit;
+                        color: #fff;
+                        border-left: 1px solid hsla(0, 0%, 100%, .1);
+                        background-color: $primary-color;
+                        border-radius: 3px;
+                        border-top-left-radius: 0;
+                        border-bottom-left-radius: 0;
+
+                        &::after {
+                            content: '';
+                            position: absolute;
+                            top: 50%;
+                            left: 50%;
+                            border-left: 4px solid transparent;
+                            border-right: 4px solid transparent;
+                            border-top: 3px solid #ffffff;
+                            transform: translateY(-50%);
+                            transform: translateX(-50%);
+                        }
+
+                        &:hover {
+                            background: $info-color;
+
+                            &+.drop-list {
+                                transform: scaleY(1);
+                            }
+                        }
+
+                    }
+
+                    .drop-list {
+                        position: absolute;
+                        padding: .417rem 0;
+                        transform: scaleY(0);
+                        width: 100%;
+                        top: 100%;
+                        left: 0;
+                        right: 0;
+                        background-color: #fff;
+                        border-radius: $card-radius-2px;
+                        box-shadow: 0 1px 2px 0 rgba(0, 0, 0, .05);
+                        overflow: hidden;
+
+                        &-item {
+                            color: $info-color;
+                            font-size: 1.167rem;
+                            line-height: 1.9;
+                            text-align: center;
+                            cursor: pointer;
+                        }
+
+                    }
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,38 @@
+@import 'styles/variables.scss';
+@import 'styles/mixins.scss';
+
+.view-container {
+    .main-container {
+        position: relative;
+        width: $view-width;
+        margin: 0 auto;
+
+        &-box {
+            margin-top: 5.17rem;
+
+            .nav-list {
+                position: fixed;
+                top: $header-height;
+                left: 0;
+                right: 0;
+            }
+
+            .main-content-wrap {
+                .main-content {
+                    @include flex-row-center;
+                    justify-content: space-between;
+                    margin-top: .33rem;
+
+                    .content-list {
+                        margin-right: 21.667rem;
+                        background: #ffffff;
+                    }
+
+                    .index-aside {
+                        background: #ffffff;
+                    }
+                }
+            }
+        }
+    }
+}

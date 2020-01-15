@@ -21,7 +21,7 @@ module.exports = override(
         style: true
     }),
 
-    // 自定义出题
+    // 自定义主题
     addLessLoader({
         javascriptEnabled: true,
         modifyVars: {
@@ -36,11 +36,13 @@ module.exports = override(
     // 目录别名
     addWebpackAlias({
         '@': path.resolve(__dirname, 'src'),
-        'utils': path.resolve(__dirname, '@/utils'),
-        'views': path.resolve(__dirname, '@/views'),
-        'api': path.resolve(__dirname, '@/api'),
-        'store': path.resolve(__dirname, '@/store'),
-        'styles': path.resolve(__dirname, '@/styles')
+        'components': path.resolve(__dirname, 'src/components'),
+        'utils': path.resolve(__dirname, 'src/utils'),
+        'views': path.resolve(__dirname, 'src/views'),
+        'api': path.resolve(__dirname, 'src/api'),
+        'store': path.resolve(__dirname, 'src/store'),
+        'styles': path.resolve(__dirname, 'src/styles'),
+        'static': path.resolve(__dirname, 'src/static')
     }),
 
     rewiredMap(),

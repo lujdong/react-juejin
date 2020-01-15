@@ -1,8 +1,11 @@
 import React from 'react'
+import Layout from '@/layout'
 
 const App = () => {
     return (
-        <div>Hello, JueJin</div>
+        <div>
+            <Layout />
+        </div>
     )
 }
 
