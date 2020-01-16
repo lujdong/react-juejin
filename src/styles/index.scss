@@ -1,6 +1,7 @@
 @import './variables.scss';
 @import './mixins.scss';
 @import './layout.scss';
+@import './media.scss';
 
 html {
     font-size: 12px;
@@ -35,4 +36,12 @@ button {
 .input-focus {
     border-color: $primary-color !important;
     background-color: #fff !important;
+}
+
+*:focus {
+    outline: none;
+}
+
+.iconfont {
+    cursor: pointer;
 }

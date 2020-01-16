@@ -1,0 +1,64 @@
+/* media layouts */
+
+// --- header ----
+@media screen and (max-width: 980px) {
+
+    .menu-index {
+        display: flex !important;
+        justify-content: center;
+        align-items: center;
+
+        &:hover {
+            &+.nav-list {
+                display: block !important;
+            }
+        }
+    }
+
+    .nav-list {
+        display: none !important;
+        flex-direction: column;
+        height: auto !important;
+        background-color: #fff;
+        box-shadow: 0 1px 2px 0 rgba(0, 0, 0, .1);
+        border: 1px solid rgba(177, 180, 185, .45);
+        border-radius: 4px;
+        font-size: 1.2rem;
+
+        &-item {
+            height: 4rem !important;
+            // padding: 0 $block-space;
+
+        }
+    }
+
+    .main-header-box {
+        width: 96%;
+    }
+
+    .button-drop {
+        display: none !important;
+    }
+
+    .icon-msg {
+        padding: 0 .8rem !important;
+    }
+}
+
+@media screen and (max-width:700px) {
+    .logo {
+        margin-right: 0 !important;
+        min-width: 3.75rem !important;
+        margin-left: .67rem;
+    }
+
+    .logo-pc {
+        display: none;
+    }
+
+    .logo-mobile {
+        display: block !important;
+    }
+}
+
+// ---header end

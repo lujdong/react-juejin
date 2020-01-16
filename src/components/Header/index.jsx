@@ -10,7 +10,7 @@ import logoMobile from 'static/svg/logo-mobile.svg'
 import search from 'static/svg/search.svg'
 import searchFocus from 'static/svg/search-focus.svg'
 
-import styles from './Header.module.scss'
+import './Header.scss'
 export default class Header extends Component {
 
     constructor(props) {
@@ -18,7 +18,9 @@ export default class Header extends Component {
         this.searchInput = React.createRef()
 
         this.state = {
-            isInputFocus: false
+            isInputFocus: false,
+            displayType: 'none',
+            avatar: 'https://avatars3.githubusercontent.com/u/39292981?s=400&u=3a754a9959968f94b61ca27ab6cda01900d9650c&v=4'
         }
     }
 
@@ -37,45 +39,50 @@ export default class Header extends Component {
 
     render() {
         return (
-            <div className={`${styles['header-container']} container`}>
-                <header className={`${styles['main-header']} container`}>
-                    <div className={`${styles['main-header-box']} flex-row container`}>
+            <div className="header-container container">
+                <header className="main-header container">
+                    <div className="main-header-box flex-row container">
                         <Router>
-                            <Link className={styles.logo}
+                            <Link className="logo"
                                 to="/"
                             >
                                 <img alt="logo"
+                                    className="logo-pc"
                                     src={logo}
                                 />
                                 <img alt="logo-mobile"
+                                    className="logo-mobile"
                                     src={logoMobile}
-                                    style={{ display: 'none' }}
                                 />
                             </Link>
                         </Router>
-                        <nav className={styles['nav']}>
-                            <ul className={styles['nav-list']}>
-                                <li className={styles['nav-list-item']}>
+                        <nav className="nav">
+                            <div className="menu-index">
+                                <span>首页</span>
+                                <div className="icon-arrow"></div>
+                            </div>
+                            <ul className="nav-list">
+                                <li className="nav-list-item">
                                     <span>首页</span>
                                 </li>
-                                <li className={styles['nav-list-item']}>
+                                <li className="nav-list-item">
                                     <span>沸点</span>
                                 </li>
-                                <li className={styles['nav-list-item']}>
+                                <li className="nav-list-item">
                                     <span>话题</span>
                                 </li>
-                                <li className={styles['nav-list-item']}>
+                                <li className="nav-list-item">
                                     <span>小册</span>
                                 </li>
-                                <li className={styles['nav-list-item']}>
+                                <li className="nav-list-item">
                                     <span>活动</span>
                                 </li>
                             </ul>
                         </nav>
-                        <div className={styles['user-container']}>
-                            <div className={styles['search-input']}>
-                                <div className={styles['search-input-item']}>
-                                    <input className={styles['search-input_inner']}
+                        <div className="user-container">
+                            <div className="search-input">
+                                <div className="search-input-item">
+                                    <input className="search-input_inner"
                                         onBlur={this.blurSearchInput}
                                         onFocus={this.focusSearchInput}
                                         placeholder="搜索掘金"
@@ -84,25 +91,35 @@ export default class Header extends Component {
                                     {
                                         this.state.isInputFocus ?
                                             <img alt="search"
-                                                className={styles['search-icon']}
+                                                className="search-icon"
                                                 src={searchFocus}
                                             /> :
                                             <img alt="search"
-                                                className={styles['search-icon']}
+                                                className="search-icon"
                                                 src={search}
                                             />
                                     }
                                 </div>
                             </div>
-                            <div className={styles['button-drop']}>
-                                <button className={styles['add']}>
+                            <div className="button-drop">
+                                <button className="add">
                                     <span>写文章</span>
                                 </button>
-                                <div className={styles['drop-allow']}></div>
-                                <ul className={styles['drop-list']}>
-                                    <li className={styles['drop-list-item']}>发布沸点</li>
-                                    <li className={styles['drop-list-item']}>分享链接</li>
+                                <div className="drop-arrow"></div>
+                                <ul className="drop-list"
+                                    style={{ display: this.state.displayType }}
+                                >
+                                    <li className="drop-list-item">发布沸点</li>
+                                    <li className="drop-list-item">分享链接</li>
                                 </ul>
+                            </div>
+                            <div className="icon-msg">
+                                <i className="iconfont icon-notification"></i>
+                            </div>
+                            <div className="icon-user">
+                                <div className="icon-user-photo"
+                                    style={{ backgroundImage: this.state.avatar }}
+                                ></div>
                             </div>
                         </div>
                     </div>

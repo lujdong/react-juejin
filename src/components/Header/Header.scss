@@ -15,27 +15,59 @@
         border-bottom: 1px solid $light-color;
 
         &-box {
-            width: $view-width;
+            max-width: $view-width;
 
             .logo {
                 min-width: $logo-width;
                 margin-right: 2rem;
+
+                .logo-mobile {
+                    display: none;
+                }
             }
 
             .nav {
                 height: $header-height;
+
+                .menu-index {
+                    display: none;
+                    width: 5.66rem;
+                    height: $header-height;
+                    font-size: 1.33rem;
+                    color: $primary-color;
+                    cursor: pointer;
+
+                    .icon-arrow {
+                        @include flex-row-center;
+
+                        &::before {
+                            content: "";
+                            display: inline-block;
+                            margin-left: .6rem;
+                            border-left: 6px solid transparent;
+                            border-right: 6px solid transparent;
+                            border-top: 6px solid $primary-color;
+                        }
+                    }
+
+                    &:hover &+.nav-list {
+                        display: block !important;
+                    }
+                }
 
                 &-list {
                     height: $header-height;
                     @include flex-row-center;
 
                     &-item {
-                        height: inherit;
+                        height: $header-height;
                         padding: 0 $block-space;
                         @include flex-row-center;
                         color: $nav-color;
                         font-size: 1.33rem;
+                        word-break: keep-all;
                         cursor: pointer;
+                        z-index: 9;
 
                         &:hover {
                             color: $primary-color;
@@ -49,11 +81,16 @@
                 @include flex-row-center;
                 height: $header-height;
 
+                &>* {
+                    padding: 0 $block-space;
+                    height: $header-height;
+                }
+
                 .search-input {
                     flex: 1;
                     height: $header-height;
                     @include flex-row-center;
-                    padding: 0 $block-space;
+                    justify-content: flex-end;
 
                     &-item {
                         @include flex-row-center;
@@ -68,12 +105,12 @@
                             color: #666;
                             background-color: transparent;
 
-
                         }
 
                         .search-icon {
                             padding: 0 .5rem;
                             line-height: inherit;
+                            cursor: pointer;
                         }
                     }
                 }
@@ -81,7 +118,6 @@
                 .button-drop {
                     height: 2.667rem;
                     @include flex-row-center;
-                    cursor: pointer;
                     position: relative;
 
                     .add {
@@ -100,7 +136,7 @@
                         }
                     }
 
-                    .drop-allow {
+                    .drop-arrow {
                         position: relative;
                         width: 1.25em;
                         flex: 1;
@@ -111,6 +147,7 @@
                         border-radius: 3px;
                         border-top-left-radius: 0;
                         border-bottom-left-radius: 0;
+                        cursor: pointer;
 
                         &::after {
                             content: '';
@@ -126,10 +163,6 @@
 
                         &:hover {
                             background: $info-color;
-
-                            &+.drop-list {
-                                transform: scaleY(1);
-                            }
                         }
 
                     }
@@ -137,7 +170,6 @@
                     .drop-list {
                         position: absolute;
                         padding: .417rem 0;
-                        transform: scaleY(0);
                         width: 100%;
                         top: 100%;
                         left: 0;
@@ -155,6 +187,47 @@
                             cursor: pointer;
                         }
 
+                    }
+                }
+
+                .icon-msg {
+                    position: relative;
+
+                    &>i {
+                        color: #71777c;
+                        font-size: 2.2rem;
+                        line-height: $header-height;
+
+                        &::after {
+                            content: '';
+                            position: absolute;
+                            top: 0;
+                            right: 0;
+                            bottom: 0;
+                            left: 0;
+                        }
+
+                    }
+
+                    &:hover i {
+                        color: $primary-color;
+                    }
+                }
+
+                .icon-user {
+                    padding-right: 0;
+                    @include flex-row-center;
+                    cursor: pointer;
+
+                    &-photo {
+                        width: 2.5rem;
+                        height: 2.5rem;
+                        border-radius: 50%;
+                        background-color: #eee;
+                        background-size: cover;
+                        background-repeat: no-repeat;
+                        background-position: 50%;
+                        background-image: url('https://avatars3.githubusercontent.com/u/39292981?s=400&u=3a754a9959968f94b61ca27ab6cda01900d9650c&v=4');
                     }
                 }
             }
