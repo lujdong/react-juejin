@@ -1,5 +1,26 @@
-@mixin flex-row-center {
+@mixin flex-row {
     display: flex;
     align-items: center;
+}
+
+@mixin flex-row-center {
+    @include flex-row;
     justify-content: center;
+}
+
+@mixin ellipse($row_count:1) {
+    @if $row_count<=1 {
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+    }
+
+    @else {
+        min-width: 0;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        display: -webkit-box;
+        -webkit-line-clamp: $row_count;
+        -webkit-box-orient: vertical;
+    }
 }

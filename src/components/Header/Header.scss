@@ -5,6 +5,7 @@
     position: relative;
     width: $view-width;
     height: $header-height;
+    z-index: 9;
 
     .main-header {
         position: fixed;
@@ -27,6 +28,7 @@
             }
 
             .nav {
+                position: relative;
                 height: $header-height;
 
                 .menu-index {
@@ -58,6 +60,7 @@
                 &-list {
                     height: $header-height;
                     @include flex-row-center;
+
 
                     &-item {
                         height: $header-height;

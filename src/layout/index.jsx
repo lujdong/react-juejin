@@ -1,59 +1,22 @@
 import React from 'react'
 
 import Header from 'components/Header'
-import styles from './Layout.module.scss'
+import Nav from 'components/Nav'
+import ContentList from 'components/ContentList'
+import Aside from 'components/Aside'
 
+import './Layout.scss'
 const Layout = () => {
     return (
-        <div className={styles['view-container']}>
+        <div className="view-container">
             <Header />
-            <main className={`${styles['main-container']}`}>
-                <div className={styles['main-container-box']}>
-                    <nav className={styles['nav-list']}>
-                        nav-list
-                    </nav>
-                    <div className={styles['main-content-wrap']}>
-                        <div className={styles['main-content']}>
-                            <div className={styles['content-list']}>
-                                <p>
-                                    content-list
-                                </p>
-                                <p>
-                                    content-list
-                                </p>
-                                <p>
-                                    content-list
-                                </p>
-                                <p>
-                                    content-list
-                                </p>
-                                <p>
-                                    content-list
-                                </p>
-                                <p>
-                                    content-list
-                                </p>
-                            </div>
-                            <aside className={styles['index-aside']}>
-                                <p>
-                                    aside bar
-                                </p>
-                                <p>
-                                    aside bar
-                                </p>
-                                <p>
-                                    aside bar
-                                </p>
-                                <p>
-                                    aside bar
-                                </p>
-                                <p>
-                                    aside bar
-                                </p>
-                                <p>
-                                    aside bar
-                                </p>
-                            </aside>
+            <main className="main-container">
+                <div className="main-container-box">
+                    <Nav />
+                    <div className="main-content-wrap">
+                        <div className="main-content">
+                            <ContentList />
+                            <Aside />
                         </div>
                     </div>
                 </div>

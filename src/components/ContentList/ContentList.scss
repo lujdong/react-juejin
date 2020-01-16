@@ -1,0 +1,35 @@
+@import '@/styles/variables.scss';
+@import '@/styles/mixins.scss';
+
+.content-list {
+    width: 700px;
+    margin-right: 21.667rem;
+    background: #ffffff;
+    border-radius: $card-radius-2px;
+
+    .filter-header {
+        padding: 1.3rem 1rem;
+        border-bottom: 1px solid hsla(0, 0%, 59.2%, .1);
+
+        .filter-list {
+            @include flex-row-center;
+            justify-content: flex-start;
+
+            .filter-item {
+                padding: 0 $block-space;
+                font-size: 1.17rem;
+                border-right: $card-border;
+                cursor: pointer;
+                color: #909090;
+
+                &:last-child {
+                    border: none;
+                }
+
+                &:hover {
+                    color: $primary-color;
+                }
+            }
+        }
+    }
+}

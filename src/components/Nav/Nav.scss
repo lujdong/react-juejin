@@ -1,0 +1,45 @@
+@import '@/styles/variables.scss';
+@import '@/styles/mixins.scss';
+
+.nav-container {
+    position: fixed;
+    top: $header-height;
+    left: 0;
+    right: 0;
+    height: 3.833rem;
+    box-shadow: 0 1px 2px 0 rgba(0, 0, 0, .05);
+
+    .nav-point {
+        position: relative;
+        width: $view-width;
+        display: flex;
+        align-items: center;
+        height: 100%;
+        margin: 0 auto;
+
+        .nav-item {
+            padding: 0 1rem;
+            height: 100%;
+            @include flex-row-center;
+            justify-content: flex-end;
+            color: $nav-color;
+            font-size: 1.16rem;
+            cursor: pointer;
+
+            &:hover {
+                color: $primary-color;
+            }
+
+            &:first-child {
+                padding-left: 0;
+            }
+
+            &:last-child {
+                position: absolute;
+                top: 0;
+                right: 0;
+                padding-right: 0;
+            }
+        }
+    }
+}

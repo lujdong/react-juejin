@@ -1,6 +1,5 @@
 /* media layouts */
 
-// --- header ----
 @media screen and (max-width: 980px) {
 
     .menu-index {
@@ -24,10 +23,11 @@
         border: 1px solid rgba(177, 180, 185, .45);
         border-radius: 4px;
         font-size: 1.2rem;
+        position: absolute !important;
+        top: $header-height;
 
         &-item {
             height: 4rem !important;
-            // padding: 0 $block-space;
 
         }
     }
@@ -43,6 +43,28 @@
     .icon-msg {
         padding: 0 .8rem !important;
     }
+
+    .nav-point {
+        width: auto !important;
+        overflow-x: auto;
+
+        .nav-item {
+            flex-shrink: 0;
+
+            &:first-child {
+                padding-left: 2rem !important;
+            }
+
+            &:last-child {
+                display: none;
+            }
+        }
+    }
+
+    .index-aside {
+        display: none !important;
+    }
+
 }
 
 @media screen and (max-width:700px) {
@@ -59,6 +81,20 @@
     .logo-mobile {
         display: block !important;
     }
-}
 
-// ---header end
+    .item-title {
+        font-size: 1.2rem !important;
+    }
+
+    .content-item {
+        .item-thumb {
+            display: none !important;
+        }
+    }
+
+    .main-container,
+    .main-content,
+    .content-list {
+        width: 100% !important;
+    }
+}
