@@ -17,6 +17,7 @@
 
     @else {
         min-width: 0;
+        white-space: normal;
         overflow: hidden;
         text-overflow: ellipsis;
         display: -webkit-box;

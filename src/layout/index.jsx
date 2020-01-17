@@ -16,8 +16,21 @@ const Layout = () => {
                     <div className="main-content-wrap">
                         <div className="main-content">
                             <ContentList />
-                            <Aside />
+                            <div className="content-sidebar index-aside">
+                                <Aside cardType="user"
+                                    footerText="完整榜单"
+                                    headerText="作者榜"
+                                    showFooter
+                                    showHeader
+                                />
+                                <Aside cardType="book"
+                                    headerText="你可能感兴趣的小册"
+                                    showHeader
+                                />
+                                <Aside cardType="link" />
+                            </div>
                         </div>
+
                     </div>
                 </div>
             </main>

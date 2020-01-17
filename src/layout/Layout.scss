@@ -2,6 +2,7 @@
 @import 'styles/mixins.scss';
 
 .view-container {
+    min-height: 100vh;
     overflow: hidden;
 
     .main-container {
@@ -15,9 +16,13 @@
             .main-content-wrap {
                 .main-content {
                     margin-top: .33rem;
+                    position: relative;
 
                     .index-aside {
-                        background: #ffffff;
+                        position: absolute;
+                        top: 0;
+                        right: 0;
+                        width: $sidebar-width;
                     }
                 }
             }
